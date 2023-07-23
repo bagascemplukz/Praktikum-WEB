@@ -1,0 +1,43 @@
+class TreeNode:
+    def _init_(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def inOrderTraversal(node):
+    if node is not None:
+        inOrderTraversal(node.left)
+        print(node.data, end=" ")
+        inOrderTraversal(node.right)
+
+def preOrderTraversal(node):
+    if node is not None:
+        print(node.data, end=" ")
+        preOrderTraversal(node.left)
+        preOrderTraversal(node.right)
+
+def postOrderTraversal(node):
+    if node is not None:
+        postOrderTraversal(node.left)
+        postOrderTraversal(node.right)
+        print(node.data, end=" ")
+
+# Membuat pohon
+root = TreeNode("BAGAS")
+root.left = TreeNode("ADI")
+root.right = TreeNode("SAPUTRA")
+
+# Traversal inOrder
+print("Traversal inOrder:")
+inOrderTraversal(root)
+print("\n")
+
+# Traversal preOrder
+print("Traversal preOrder:")
+preOrderTraversal(root)
+print("\n")
+
+# Traversal postOrder
+print("Traversal postOrder:")
+postOrderTraversal(root)
+print("\n")
